@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/teacher/viewDesign">
+    <title>View Students</title>
+</head>
+
+<body>
+    <a href="/teacher/home">Back</a>
+    <h1>View Students</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for each in student %}
+            <tr>
+                <td>{{each.id}}</td>
+                <td>{{each.username}}</td>
+                <td>{{each.email}}</td>
+                <td>{{each.year}}</td>
+                <td>
+                    <a href="/teacher/deletestudent?id={{each.id}}" class="delete-button">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+
+</html>
